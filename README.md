@@ -128,7 +128,7 @@ src/
 - PropTypes for type checking
 - Comprehensive component documentation
 - Performance optimizations with React.memo and custom hooks
-
+<img src="https://t.bkit.co/w_6803b7c8de4e8.gif" />
 ## License
 
 MIT
