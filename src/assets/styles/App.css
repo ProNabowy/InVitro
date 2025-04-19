@@ -1,0 +1,46 @@
+@import './responsive.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: "Alexandria", sans-serif;
+  background-color: #fafbfb;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding: 0 10px;
+  margin: auto;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+label {
+  cursor: pointer;
+}
+
+.transition {
+  transition: 0.3s all ease-in-out !important;
+}

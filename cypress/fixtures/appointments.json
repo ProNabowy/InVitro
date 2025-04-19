@@ -1,0 +1,18 @@
+{
+    "appointments": [
+        {
+            "id": 1,
+            "patientName": "John Doe",
+            "date": "2024-04-20",
+            "time": "10:00",
+            "status": "confirmed"
+        },
+        {
+            "id": 2,
+            "patientName": "Jane Smith",
+            "date": "2024-04-21",
+            "time": "14:30",
+            "status": "pending"
+        }
+    ]
+}

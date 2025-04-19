@@ -1,0 +1,121 @@
+/* Responsive Design Utilities */
+
+/* Base responsive container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    p,
+    span,
+    a {
+        font-size: 0.875rem;
+    }
+}
+
+/* Responsive grid layouts */
+.grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Responsive flex layouts */
+.flex-responsive {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Responsive images */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive spacing */
+@media (max-width: 640px) {
+    .p-responsive {
+        padding: 0.5rem;
+    }
+
+    .m-responsive {
+        margin: 0.5rem;
+    }
+}
+
+/* Responsive visibility */
+@media (max-width: 640px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
+
+@media (min-width: 641px) {
+    .show-on-mobile {
+        display: none;
+    }
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+    .nav-responsive {
+        flex-direction: column;
+    }
+
+    .nav-responsive li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Responsive tables */
+@media (max-width: 768px) {
+    .table-responsive {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Responsive forms */
+@media (max-width: 640px) {
+
+    .form-responsive input,
+    .form-responsive select,
+    .form-responsive textarea {
+        width: 100%;
+    }
+}
+
+/* Responsive buttons */
+@media (max-width: 640px) {
+    .btn-responsive {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Responsive cards */
+@media (max-width: 640px) {
+    .card-responsive {
+        flex-direction: column;
+    }
+
+    .card-responsive img {
+        width: 100%;
+        height: auto;
+    }
+}
