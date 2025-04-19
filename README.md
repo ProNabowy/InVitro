@@ -100,6 +100,35 @@ Several performance optimizations have been implemented:
 - Lazy loading for images
 - Optimized rendering cycles
 
+## Project Structure
+
+```
+src/
+├── assets/          # Static assets and styles
+├── components/      # Reusable UI components
+├── context/         # React Context for state management
+├── hooks/          # Custom React hooks
+├── pages/          # Page components
+├── db/             # Mock data
+└── utils/          # Utility functions
+```
+
+## Development Environment
+
+- Node.js v18+
+- npm v9+
+- Vite for development and building
+- ESLint for code linting
+- Prettier for code formatting
+
+## Code Quality
+
+- ESLint configuration for code quality
+- Prettier for consistent code formatting
+- PropTypes for type checking
+- Comprehensive component documentation
+- Performance optimizations with React.memo and custom hooks
+
 ## License
 
 MIT
