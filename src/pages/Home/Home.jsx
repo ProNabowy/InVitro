@@ -55,7 +55,7 @@ export default function Home() {
           selectedAvailability={selectedAvailability}
         />
 
-        <div className="mt-5">
+        <div className="my-5">
           <h2 className="text-2xl font-semibold mb-5">My Appointments</h2>
 
           <Appointments />

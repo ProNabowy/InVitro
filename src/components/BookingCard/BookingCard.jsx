@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "@/context/AppContext";
 import useClickOutside from "@/hooks/useClickOutside";
 
@@ -14,9 +14,6 @@ import useClickOutside from "@/hooks/useClickOutside";
 export default function BookingCard() {
   const { visible, setVisible, doctor, position, setAppointments } =
     useContext(AppContext);
-
-  if (!doctor) return <></>;
-
   const [selectedTime, setSelectedTime] = useState({});
 
   useClickOutside({
@@ -26,19 +23,24 @@ export default function BookingCard() {
     },
   });
 
+  if (!doctor) return <></>;
+
   const onSubmit = () => {
     setVisible(false);
 
     setAppointments((prev) => {
-      const exists = prev.some((item) => item.id === doctor.id);
+      const exists = prev.some((item) => item.doctorId === doctor.id);
 
       const appointment = {
         ...doctor,
+        doctorId: doctor.id,
         date: `${selectedTime.date}, ${selectedTime.time}`,
       };
 
       if (exists) {
-        return prev.map((item) => (item.id === doctor.id ? appointment : item));
+        return prev.map((item) =>
+          item.doctorId === doctor.id ? appointment : item
+        );
       }
 
       return [...prev, appointment];

@@ -17,8 +17,14 @@ import { AppContext } from "@/context/AppContext";
  * <DoctorCard doctor={{ name: 'Dr. Sarah', image: 'https://example.com/image.jpg', rate: 4.5, available: true }} />
  */
 function DoctorCard({ doctor = {} }) {
-  const { setVisible, setDoctor, setPosition } = useContext(AppContext);
+  const { setVisible, setDoctor, setPosition, appointments } =
+    useContext(AppContext);
   const ref = useRef(null);
+
+  // Check if the user has already booked an appointment with this doctor
+  const isBooked = appointments.some(
+    (appointment) => appointment.doctorId === doctor.id
+  );
 
   useEffect(() => {
     const rect = ref.current.getBoundingClientRect();
@@ -100,12 +106,18 @@ function DoctorCard({ doctor = {} }) {
 
       {doctor.available && (
         <button
-          onClick={onClick}
-          onKeyDown={handleKeyPress}
-          className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-[#106ff566]/90 transition-colors"
-          tabIndex={0}
+          onClick={isBooked ? undefined : onClick}
+          onKeyDown={isBooked ? undefined : handleKeyPress}
+          className={`px-4 py-2 rounded-lg transition-colors ${
+            isBooked
+              ? "bg-gray-300 text-gray-700 cursor-not-allowed"
+              : "bg-primary text-white hover:bg-[#106ff566]/90"
+          }`}
+          tabIndex={isBooked ? -1 : 0}
+          aria-disabled={isBooked}
+          data-test={isBooked ? "booked-button" : "book-now-button"}
         >
-          Book Now
+          {isBooked ? "Booked" : "Book Now"}
         </button>
       )}
     </div>
